@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.demo</groupId>
+    <artifactId>shiro-v1.4.1-demo</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>shiro-bjsxt-authentication</module>
+        <module>shiro-atguigu-1</module>
+        <module>shiro-atguigu-mvc</module>
+        <module>shiro-wolfcode-1</module>
+        <module>shiro-wolfcode-servlet</module>
+    </modules>
+    <properties>
+
+        <shiro.previousVersion>1.4.1</shiro.previousVersion>
+        <!-- Replaced by the build number plugin at build time: -->
+        <buildNumber>${user.name}-${maven.build.timestamp}</buildNumber>
+
+        <!-- non-dependency-based properties: -->
+        <shiro.osgi.importRange>[1.2, 2)</shiro.osgi.importRange>
+
+        <!-- Compile 3rd party dependencies: -->
+        <!-- Don't change this version without also changing the shiro-aspect and shiro-features
+             modules' OSGi metadata: -->
+        <aspectj.version>1.8.9</aspectj.version>
+        <cas.client.core.version>3.2.2</cas.client.core.version>
+        <commons.cli.version>1.4</commons.cli.version>
+        <commons.codec.version>1.12</commons.codec.version>
+        <commons.configuration2.version>2.2</commons.configuration2.version>
+        <commons.lang3.version>3.3.2</commons.lang3.version>
+        <commons.lang.version>2.4</commons.lang.version>
+        <commons.logging.version>1.2</commons.logging.version>
+        <crowd.version>1.5.2</crowd.version>
+        <!-- Don't change this version without also changing the shiro-ehcache and shiro-features
+             modules' OSGi metadata: -->
+        <ehcache.version>2.6.11</ehcache.version>
+        <!-- Don't change this version without also changing the shiro-hazelcast and shiro-features OSGi metadata: -->
+        <hazelcast.version>3.7.2</hazelcast.version>
+        <hsqldb.version>1.8.0.7</hsqldb.version>
+        <jdk.version>1.8</jdk.version>
+        <jetty.version>9.3.0.M1</jetty.version>
+        <!-- Don't change this version without also changing the shiro-quartz and shiro-features
+             modules' OSGi metadata: -->
+        <quartz.version>1.6.1</quartz.version>
+        <slf4j.version>1.7.21</slf4j.version>
+        <spring.version>4.3.22.RELEASE</spring.version>
+        <spring-boot.version>1.5.19.RELEASE</spring-boot.version>
+        <guice.version>3.0</guice.version>
+        <jaxrs.api.version>2.0.1</jaxrs.api.version>
+
+        <!-- Test 3rd-party dependencies: -->
+        <easymock.version>3.4</easymock.version>
+        <gmaven.version>1.5</gmaven.version>
+        <groovy.version>2.4.7</groovy.version>
+        <junit.version>4.12</junit.version>
+        <hibernate.version>4.2.21.Final</hibernate.version>
+        <!-- so we can mock static methods in 3rd party libraries that sometimes don't use proper interfaces
+             ahem, hazelcast, ahem... -->
+        <powermock.version>1.6.6</powermock.version>
+
+        <maven.compiler.source>${jdk.version}</maven.compiler.source>
+        <maven.compiler.target>${jdk.version}</maven.compiler.target>
+
+    </properties>
+</project>
