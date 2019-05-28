@@ -13,7 +13,7 @@
                 <ref bean="secondRealm"/>
             </list>
         </property>
-
+        <!--设置cookie时间-->
         <!--<property name="rememberMeManager.cookie.maxAge" value="10"></property>-->
     </bean>
 
@@ -23,6 +23,7 @@
         <property name="cacheManagerConfigFile" value="classpath:ehcache.xml"/>
     </bean>
 
+    <!--认证策略-->
     <bean id="authenticator"
           class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
         <property name="authenticationStrategy">
@@ -30,8 +31,8 @@
         </property>
     </bean>
 
-    	<!--3. 配置 Realm-->
-    	<!--3.1 直接配置实现了 org.apache.shiro.realm.Realm 接口的 bean-->
+    <!--3. 配置 Realm-->
+    <!--3.1 直接配置实现了 org.apache.shiro.realm.Realm 接口的 bean-->
     <bean id="jdbcRealm" class="com.demo.shiro.realm.ShiroRealm">
         <property name="credentialsMatcher">
             <bean class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">

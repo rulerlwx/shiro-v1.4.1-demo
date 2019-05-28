@@ -3,6 +3,11 @@ package com.demo.shiro.factory;
 import java.util.LinkedHashMap;
 
 /**
+ * 从数据表中查出资源权限（这里是用静态模拟数据）
+ *
+ * 注意配置的顺序，因为有第一位置优先原则 —— 20190528
+ *
+ *
  * Created by lwx on 2019/5/26.
  */
 public class FilterChainDefinitionMapBuilder {
