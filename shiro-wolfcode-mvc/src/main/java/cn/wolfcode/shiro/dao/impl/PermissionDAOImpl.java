@@ -52,4 +52,15 @@ public class PermissionDAOImpl implements IPermissionDAO {
 
 
     }
+
+    @Override
+    public List<String> getAllResources() {
+        String  sql = "select resource from permission ";
+        return template.query(sql, new RowMapper<String>() {
+            @Override
+            public String mapRow(ResultSet rs, int rowNum) throws SQLException {
+                return rs.getString("resource");
+            }
+        });
+    }
 }

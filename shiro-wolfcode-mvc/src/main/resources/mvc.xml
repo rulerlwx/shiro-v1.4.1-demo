@@ -26,7 +26,7 @@
 		<property name="suffix" value=".jsp"/>
 	</bean>
     <!--6：引入shiro配置文件-->
-
+	<import resource="classpath:spring-shiro.xml"/>
 	<!--7：引入spring配置文件-->
 	<import resource="classpath:spring.xml"></import>
 </beans>

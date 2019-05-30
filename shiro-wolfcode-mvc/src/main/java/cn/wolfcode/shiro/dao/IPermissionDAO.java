@@ -18,4 +18,6 @@ public interface IPermissionDAO {
      * @return
      */
     List<String> getPermissionResourceByUserId(Long userId);
+
+    List<String> getAllResources();
 }
