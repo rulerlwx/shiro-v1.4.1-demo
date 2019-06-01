@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="shortcut icon" href="#" />
 </head>
 <body>
 欢迎【xxxx】光临 <a href="/logout">注销</a> <a href="/reload">重新加载权限</a><br>

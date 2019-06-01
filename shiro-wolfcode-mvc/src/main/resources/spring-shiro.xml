@@ -13,10 +13,14 @@
 	<!--自定义realm-->
 	<bean id="userRealm" class="cn.wolfcode.shiro.realm.UserRealm">
 		<property name="userDAO" ref="userDAOImpl"/>
+		<property name="roleDAO" ref="roleDAOImpl"/>
+		<property name="permissionDAO" ref="permissionDAOImpl"/>
+		<property name="credentialsMatcher" ref="credentialsMatcher"/>
 	</bean>
 	<!-- 配置安全管理器SecurityManager -->
 	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
 		<property name="realm" ref="userRealm"/>
+		<property name="cacheManager" ref="cacheManager"></property>
 	</bean>
 	<!-- 定义ShiroFilter -->
 	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
@@ -45,4 +49,22 @@
 			</props>
 		</property>
 	</bean>
+
+	<!--如果导入的ehcache版本在2.5.0以上,需要配置如下.-->
+	<!-- 缓存管理器开始 -->
+	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+		<property name="cacheManager" ref="ehCacheManager"/>
+	</bean>
+	<bean id="ehCacheManager" class ="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+		<property name="configLocation" value="classpath:shiro-ehcache.xml" />
+		<property name="shared" value="true"></property>
+	</bean>
+
+	<!--密码加密算法-->
+	<bean id="credentialsMatcher"
+		  class="org.apache.shiro.authc.credential.HashedCredentialsMatcher">
+		<property name="hashAlgorithmName" value="md5" />
+		<property name="hashIterations" value="3" />
+	</bean>
+
 </beans>
